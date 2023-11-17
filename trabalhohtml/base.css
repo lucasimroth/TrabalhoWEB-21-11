@@ -1,0 +1,90 @@
+body{
+    background-image: url('./images/papel2.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px auto 110px;
+    grid-template-areas: "header header header" " main main main" "footer footer footer";
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    justify-content: space-between;
+    background-color: rgb(52, 52, 54);
+    box-shadow: 5px 5px 3px rgba(134, 14, 201, 0.3);
+    border-radius: 10px;
+}
+header h1{
+    margin-left: 70px;
+    color: white;
+    text-shadow: 5px 5px 3px rgba(134, 14, 201, 0.5);
+}
+header a:hover{
+    border: solid rgb(134, 14, 201);
+    transition: 0.3s all;
+    border-radius: 5px;
+}
+header nav, ul, li{
+    display: inline-block;
+    padding: 25px;
+    list-style: none;
+    font-weight: bold;
+}
+header nav, ul, li, a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    background-color: rgb(52, 52, 54);
+    box-shadow: 5px 5px 3px rgba(134, 14, 201, 0.3);
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 40px);
+    height: 110px;
+}
+footer li{
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
+}
+
+@media (max-width: 1100px) {
+    header{
+        justify-content: none;
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 412px) {
+    header{
+    grid-area: header;
+    flex-direction: column;
+    display: block;
+    align-items: none;
+    font-size: 50%;
+    }
+}

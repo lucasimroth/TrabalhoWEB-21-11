@@ -1,0 +1,73 @@
+/* Definindo o fundo da página de relatorios 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('fundorelatorio.jpg');
+    margin: 0;
+    padding: 0;
+}*/
+
+/* Estilos para a barra de navegação */
+main ul {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    height: 50px;
+    font-weight: bold;
+    color: white;
+    background-image: rgb(52, 52, 54); /* Gradiente de fundo */
+}
+
+main li {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 0px 10px;
+}
+
+
+/* Estilos para a seção principal*/
+main {
+    width: 97%;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 5px 5px 3px rgba(134, 14, 201, 0.3);
+    border-radius: 2px;
+}
+
+main table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main td, th{
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+main h1 {
+    color: white; /* Cor do título */
+    font-size: 24px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.superior { /* Cor da parte superior do formulario */
+    color: white;
+}
+
+.primeiraLinhaTable{
+    background-color: rgb(52, 52, 54);
+}
+
+.segundaLinhaTable{
+    background-color: rgb(115, 115, 121);
+}
+
+@media (max-width: 780px) {
+    main td, th{
+        font-size: 12px;
+    }    
+}
