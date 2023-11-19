@@ -5,6 +5,16 @@ body {
     margin: 0;
     padding: 0;
 }
+body dialog{
+    width: 70%;
+    text-align: center;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+    body dialog::backdrop{
+    background-color: rgba(24, 23, 23, 0.8);
+}
 
 /* Estilos para a seção principal */
 main {
@@ -92,3 +102,6 @@ main button:hover {
 main button[type="reset"]:hover {
     background-color: #75f70b; /* Cor de fundo verde mais brilhante no hover */
 }
+
+
+

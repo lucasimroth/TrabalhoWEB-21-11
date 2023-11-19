@@ -1,3 +1,22 @@
+<!--
+    o codigo pego do trabalho foi somente a parte de cadastro e a parte de relatorio, as outras abas eu tirei o link e removi o arquivo para ficar mais sucinto,
+    com todos os estilos originais mantendo-se.
+
+    eu comecei com a parte de cadastro
+    1- criei cadastro.js para fazer o processo de salvar os dados puxando todos por ID e alocando em constantes cada dado que queria armazenar.
+    2- cadastro.js - eu faço uma variavel dados para conter os dados armazenados localmente e uma varivael key que contem a chave da pagina e me permite identificar a pagina e se ela tem algum dado
+    3- cadastro.js - criei a função salvar dados que verifica se a key existe, se ela existe eu estou editando os dados, se ela não existe eu estou adicionando os dados
+    4- cadastro.js - a função salvar tambem se existir uma chave vai salvar esses dados para preencher o formulario.
+    5- cadastro.js - adicionei a API de buscar CEP para adicionar automaticamente os dados endereço, bairro, estado e cidade
+    6- dentro de index.html fiz a chamada da funcao buscacep e salvardados
+    7- fiz o arquivo relatorio.js que criar novas linhas da tabela com os dados adquiridos no cadastro e adiciona a funcao de edição e remoção desses novos dados
+    8- relatorio.js - apos o fim da criação da tabela o programa coloca cor no editar e remover e toda a linha nova é preenchido com roxo para identificar os adicionados dos fixos
+    9- cadastro.js - adicionei um modal para mensagem de erro, quando o buscacep faalha o modal é aberto e um click fecha ele.
+    10- cadastro.js adicionei bold e cor vermelha via javascript ao modal 
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +32,7 @@
         <nav>
             <ul>
                 <a href="#"><li>Home</li></a> <!-- Links para outras páginas -->
-                <a href="Cadastros.html"><li>Cadastro</li></a>
+                <a href="Index.html"><li>Cadastro</li></a>
                 <a href="Relatorios.html"><li>Relatorio</li></a>
                 <a href="#"><li>Conteúdo</li></a>
                 <a href="#"><li>New Letter</li></a>
@@ -62,6 +81,10 @@
             </li>
         </ul>
     </footer>
+    <dialog>
+        <h2>CEP INVALIDO</h2>
+        <p>Verifique se o Cep esta correto: </p>
+    </dialog>
 </body>
 <script src="./cadastro.js"></script>
 </html>

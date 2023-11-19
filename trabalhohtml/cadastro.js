@@ -3,9 +3,6 @@ const form = document.getElementById('form');
 	const sobrenome = document.getElementById('sobrenome');
 	const cpf = document.getElementById('cpf');
 	const email = document.getElementById('email');
-	const Cemail = document.getElementById('Cemail');
-	const senha = document.getElementById('senha');
-	const confirma = document.getElementById('confirma');
 	const cep = document.getElementById('cep');
 	const pais = document.getElementById('pais');
 	const estado = document.getElementById('estado');
@@ -16,7 +13,6 @@ const form = document.getElementById('form');
 	const telefone = document.getElementById('telefone');
 	const data = document.getElementById('data');
 	const genero = document.getElementById('genero');
-	const complemento = document.getElementById('complemento');
 
 	var dados = JSON.parse(localStorage.getItem('dados')) || [];
 	const key = new URLSearchParams(window.location.search).get('chave');
@@ -26,9 +22,6 @@ const form = document.getElementById('form');
 		let novoSobrenome = sobrenome.value;
 		let novoCpf = cpf.value;
 		let novoEmail = email.value;
-		/*let novoCmail = Cemail.value;
-		let novoSenha = senha.value;
-		let novoConfirma = confirma.value;*/
 		let novoCep = cep.value;
 		let novoPais = pais.value;
 		let novoEstado = estado.value;
@@ -73,9 +66,11 @@ const form = document.getElementById('form');
 		bairro.value = dados[key].bairro;
 		endereco.value = dados[key].endereco;
 		numero.value = dados[key].numero;
-		complemento.value = dados[key].complemento;
 	}
     /* nome, sobrenome, cpf, email, comfirma email, senha, confirma senha, País, estado, cidade, bairro, endereço, numero da casa, cep, telefone, data de nascimento, sexo, complemento*/
+
+	const modal = document.querySelector("dialog");
+	const btnModal = document.querySelectorAll(".modal");
 
 	function buscaCep(valor){
 		const mensagem = document.getElementById("msgErro");
@@ -98,10 +93,10 @@ const form = document.getElementById('form');
 				document.body.appendChild(script);
 				
 			}else{
-			msgErro("Invalido");
+				msgErro();
 			}
 		}else{
-		msgErro("Preencha Corretamente");
+			msgErro();
 		}
 	}
 
@@ -113,19 +108,22 @@ const form = document.getElementById('form');
 			cidade.value = resposta.localidade;
 			estado.value = resposta.uf;
 		}else{
-			msgErro("deu bosta");
+			msgErro();
 		}
 	}
 
-	function msgErro(msg){
-		erro = document.createElement("label");
-		erro.style.color = "red";
-		erro.style.fontWeight = "bold";
-		erro.id = "msgErro";
-		erro.innerText = "CEP: " + cep.value + " " + msg;
+	function msgErro(){
+		const dialog = document.querySelector("dialog");
+		
+		modal.showModal();
+		
+		dialog.style.color = "red";
+        dialog.style.fontWeight = "bold";
 
-		//form.insetBefore(erro, cep.nextSibling);
-		cep.parentNode.insertBefore(erro, cep.nextSibling);
-		form.reset();
+		modal.addEventListener("click", evento =>{
+			if(evento.target === modal){
+				modal.close();
+			}
+		})
 	}
 

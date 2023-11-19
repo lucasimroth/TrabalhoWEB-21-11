@@ -1,13 +1,11 @@
 const tabela = document.getElementById('tabela');
 
 	var dados = JSON.parse(localStorage.getItem('dados')) || [];
-    /*var cor = document.querySelector("a");
-    cor.style.color = "black";*/
 
 	function exibirDados(){
 		dados.forEach((elemento, chave) =>{
 			tabela.innerHTML += `
-		<tr>
+		<tr class="JSTR">
 			<td>${elemento.nome}</td>
             <td>${elemento.sobrenome}</td>
             <td>${elemento.cpf}</td>
@@ -24,7 +22,7 @@ const tabela = document.getElementById('tabela');
             <td>${elemento.numero}</td>
             
 			<td>
-				<a href="./Cadastros.html?chave=${chave}">Editar</a>
+				<a href="./Index.html?chave=${chave}">Editar</a>
 				<a href="#" onClick="remover(${chave})">Remover</a>
 			</td>
 		</tr>
@@ -32,6 +30,11 @@ const tabela = document.getElementById('tabela');
 		})
         setTimeout(() => {
             const cor = document.querySelectorAll('td a');
+            const adicao = document.querySelectorAll('.JSTR');
+        adicao.forEach(adicao => {
+            adicao.style.backgroundColor = 'rgb(192, 131, 224)';
+        });
+            
             cor.forEach(cor => {
                 cor.style.color = "black";
             });
@@ -46,18 +49,3 @@ const tabela = document.getElementById('tabela');
 
 
 	exibirDados();
-    /*  nome.value = dados[key].nome;
-		sobrenome.value = dados[key].sobrenome;
-		cpf.value = dados[key].cpf;
-		genero.value = dados[key].genero;
-		data.value = dados[key].data;
-		email.value = dados[key].email;
-		telefone.value = dados[key].telefone;
-		cep.value = dados[key].telefone;
-		pais.value = dados[key].pais;
-		estado.value = dados[key].estado;
-		cidade.value = dados[key].cidade;
-		bairro.value = dados[key].bairro;
-		endereco.value = dados[key].endereco;
-		numero.value = dados[key].numero;
-		complemento.value = dados[key].complemento;*/
