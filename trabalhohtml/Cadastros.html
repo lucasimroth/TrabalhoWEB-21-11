@@ -31,45 +31,15 @@
                 <input type="email" name="Cemail" id="Cemail" placeholder="Confirmar o seu Email ">
                 <input type="password" name="senha" id="senha" placeholder="digite a sua senha">
                 <input type="password" name="confirma" id="senha" placeholder="confirme a sua senha">
+                <input type="text" name="cep" id="cep" onblur="buscaCep(this.value)" placeholder="Digite o seu CEP">
                 <input type="text" name="pais" id="pais" placeholder="Digite o nome do seu país">
-                <!-- Seleção de estado -->
-                <select name="estado" id="estado">
-                    <option value="estado1" disabled selected>Selecione o seu estado</option>
-                    <!-- Opções de estados -->
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PR">Paraná</option> 
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="SP">São Paulo</option>
-                </select>
-                <!-- Seleção de cidade -->
-                <select name="cidade" id="cidade">
-                    <option value="cidade1" disabled selected>Selecione a sua cidade</option>
-                    <!-- Opções de cidades com estados correspondentes -->
-                    <option value="Rio Branco">Rio Branco, Acre</option>
-                    <option value="Maceió">Maceió, Alagoas</option>
-                    <option value="Manaus">Manaus, Amazonas</option>
-                    <option value="Salvador">Salvador, Bahia</option>
-                    <option value="Fortaleza">Fortaleza, Ceará</option>
-                    <option value="Goiânia">Goiânia, Goiás</option>
-                    <option value="Belo Horizonte">Belo Horizonte, Minas Gerais</option>
-                    <option value="Recife">Recife, Pernambuco</option>
-                    <option value="Curitiba">Curitiba, Paraná</option>
-                    <option value="Rio de Janeiro">Rio de Janeiro, Rio de Janeiro</option>
-                    <option value="São Paulo">São Paulo, São Paulo</option>
-                </select>
+                <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
+                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
                 <input type="text" name="bairro" id="bairro" placeholder="Nome do seu bairro">
                 <input type="text" name="endereco" id="endereco" placeholder="Nome do seu endereço">
                 <input type="number" name="numero" id="numero" placeholder="Escolha o número da sua casa/apto">
-                <input type="text" name="cep" id="cep" placeholder="Digite o seu CEP">
                 <input type="text" id="telefone" name="telefone" placeholder="Digite o seu telefone">
-                <input type="text" name="data" id="data" placeholder="Digite a data de nascimento">
+                <input type="date" name="data" id="data" placeholder="Digite a data de nascimento">
                 <!-- Seleção de gênero -->
                 <select name="genero" id="genero">
                     <option value="sexo" disabled selected>Selecione o sexo</option>
@@ -80,7 +50,7 @@
                 <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento ">
                 <!-- Botões de Limpar e Salvar -->
                 <button type="reset">Limpar</button>
-                <button type="submit">Salvar</button>
+                <button type="submit" onclick="salvarDados()">Salvar</button>
             </form> <!-- Fim do formulário de cadastro -->
         </section>
     </main>
@@ -93,4 +63,5 @@
         </ul>
     </footer>
 </body>
+<script src="./cadastro.js"></script>
 </html>
